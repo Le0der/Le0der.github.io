@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4300317 */
+  /* Color fonts */
+  src: 
+       url('iconfont.woff2?t=1698223755134') format('woff2'),
+       url('iconfont.woff?t=1698223755134') format('woff'),
+       url('iconfont.ttf?t=1698223755134') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-liuyan:before {
+  content: "\e61d";
+}
+
+.icon-liuyan2:before {
+  content: "\e681";
+}
+
+.icon-liuyan3:before {
+  content: "\e64b";
+}
+
+.icon-tuiguanglianjie:before {
+  content: "\e620";
+}
+
+.icon-about:before {
+  content: "\e676";
+}
+
+.icon-music:before {
+  content: "\e68b";
+}
+
+.icon-movie:before {
+  content: "\e602";
+}
+
+.icon-nav:before {
+  content: "\ec31";
+}
+
+.icon-baoxiang:before {
+  content: "\e60d";
+}
+
+.icon-tag:before {
+  content: "\e614";
+}
+
+.icon-categories:before {
+  content: "\e633";
+}
+
+.icon-doc:before {
+  content: "\e754";
+}
+
+.icon-show:before {
+  content: "\e646";
+}
+
+.icon-home:before {
+  content: "\e680";
+}
+
+.icon-archives:before {
+  content: "\ec4a";
+}
+
+.icon-doc2:before {
+  content: "\e611";
+}
+
