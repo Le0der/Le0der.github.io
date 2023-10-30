@@ -13,7 +13,7 @@ body::-webkit-scrollbar {
     background-size: cover;/* 指定宽度和高度, 指定像素 128px, 指定百分比 x%， 覆盖 cover */
     transform: translateX(50%);
     cursor: pointer;
-    font-family: tzy;
+    font-family: Microsoft Yahei;
     font-weight: 600;
     font-size: 13px;
     color: #6f42c1;

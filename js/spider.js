@@ -35,7 +35,7 @@ if (document.body.clientWidth > 992) {
                 right: 50 + 'px',
                 // 这里可以换为你喜欢的图片，例如我就换为了雪人，但是要抠图
                 nekoImg: "https://assetsblog.leoder.top/img/spider.webp",
-                hoverMsg: "I'm Spider-Man!",
+                hoverMsg: "Spider-Man!",
                 color: "#6f42c1",
                 during: 500,
                 blog_body: "body",
