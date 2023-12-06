@@ -1,13 +1,39 @@
-
 /* @font-face {
     /* 为载入的字体取名字(随意) */
-    /* font-family: 'YSHST';	
+/* font-family: 'YSHST';	
     /* 字体文件地址(相对或者绝对路径都可以) */
-    /* src: url(/font/优设好身体.woff2);
+/* src: url(/font/优设好身体.woff2);
     /* 定义加粗样式(加粗多少) */
-    /* font-weight: normal;
+/* font-weight: normal;
     /* 定义字体样式(斜体/非斜体) */
-    /* font-style: normal;
+/* font-style: normal;
     /* 定义显示样式 */
-    /* font-display: block;
+/* font-display: block;
   }*/
+
+
+@font-face {
+  /* 为载入的字体取名字(随意) */
+  font-family: 'Anton';
+  /* 字体文件地址(相对或者绝对路径都可以) */
+  src: url(https://assets.leoder.top/fonts/Anton-Regular-2.ttf);
+  /* 定义加粗样式(加粗多少) */
+  font-weight: normal;
+  /* 定义字体样式(斜体/非斜体) */
+  font-style: normal;
+  /* 定义显示样式 auto | block | swap | fallback | optional五种值 */
+  font-display: swap;
+}
+
+@font-face {
+  /* 为载入的字体取名字(随意) */
+  font-family: 'Yunmobei';
+  /* 字体文件地址(相对或者绝对路径都可以) */
+  src: url(https://assets.leoder.top/fonts/Yunmobei-enfont2.0-Regular-2.ttf);
+  /* 定义加粗样式(加粗多少) */
+  font-weight: normal;
+  /* 定义字体样式(斜体/非斜体) */
+  font-style: normal;
+  /* 定义显示样式 auto | block | swap | fallback | optional五种值 */
+  font-display: swap;
+}

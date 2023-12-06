@@ -4,11 +4,36 @@
   
     
     <entry>
-      <title>Butterfly标签</title>
-      <link href="/2023/10/24/%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8/"/>
-      <url>/2023/10/24/%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8/</url>
+      <title>博客搭建基础教程(一)</title>
+      <link href="/posts/38f90bc.html"/>
+      <url>/posts/38f90bc.html</url>
       
-        <content type="html"><![CDATA[<h2 id="这是标签展示页面"><a href="#这是标签展示页面" class="headerlink" title="这是标签展示页面"></a>这是标签展示页面</h2><div class="timeline color]"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>时间线标题（可选）[</p></div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>时间节点（标题）</p></div></div><div class='timeline-item-content'><p>正文内容</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>时间节点（标题）</p></div></div><div class='timeline-item-content'><p>正文内容</p></div></div></div><div class="note simple"><p>默认 提示块标签</p></div><div class="note default simple"><p>default 提示块标签</p></div><div class="note primary simple"><p>primary 提示块标签</p></div><div class="note success simple"><p>success 提示块标签</p></div><div class="note info simple"><p>info 提示块标签</p></div><div class="note warning simple"><p>warning 提示块标签</p></div><div class="note danger simple"><p>danger 提示块标签</p></div><div class="note icon-padding simple"><i class="note-icon fab fa-cc-visa"></i><p>你是刷 Visa 还是 UnionPay</p></div><div class="note blue icon-padding simple"><i class="note-icon fas fa-bullhorn"></i><p>2021年快到了….</p></div><div class="note pink icon-padding simple"><i class="note-icon fas fa-car-crash"></i><p>小心开车 安全至上</p></div><div class="note red icon-padding simple"><i class="note-icon fas fa-fan"></i><p>这是三片呢？还是四片？</p></div><div class="note orange icon-padding simple"><i class="note-icon fas fa-battery-half"></i><p>你是刷 Visa 还是 UnionPay</p></div><div class="note purple icon-padding simple"><i class="note-icon far fa-hand-scissors"></i><p>剪刀石头布</p></div><div class="note green icon-padding simple"><i class="note-icon fab fa-internet-explorer"></i><p>前端最讨厌的浏览器</p></div>]]></content>
+        <content type="html"><![CDATA[<div class="note info no-icon flat"><p><span class='p h4'><strong>前言</strong></span></p><p>这部分教程感谢fomalhaut大佬的文章<a href="https://www.fomal.cc/posts/e593433d.html">Hexo博客搭建基础教程(一)</a>和butterfly官方文档<a href="https://www.fomal.cc/posts/e593433d.html">Butterfly 安装文档(一) 快速开始</a><br>参考或者直接搬运他们的教程，方便收藏，不怕某天作者的博客突然挂了导致无法参考🙈🙈🙈<br><a href="https://space.bilibili.com/220757832">Fomalhaut</a>大佬在B站有搭建视频，而且博客进行了开源，可以去大力支持一波👍<br>全程我将会和大家一起进行搭建，大家可以放心食用。</p><p>博客搭建与魔改系列教程导航🚥🚥🚥  </p><ol><li><a href="">博客搭建基础教程(一)</a>  ⇦当前位置🪂</li></ol></div><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ol><li>博客搭建过程遇到任何问题，优先在本页面搜索，检查是否已经有该配置教程。</li><li>无法解决问题可以阅读<a href="https://www.fomal.cc/">Fomalhaut</a>的博客或者<a href="https://butterfly.js.org/">官方</a>搭建教程寻求解决方案。</li><li>你也可以在文章评论区留言，注意留言时请填写正确的邮箱以确保能收到站长的回复。</li></ol><h2 id="环境与工具准备"><a href="#环境与工具准备" class="headerlink" title="环境与工具准备"></a>环境与工具准备</h2><p><strong>本教程面对的是Windows用户，博主也只在Windows环境下搭建</strong></p><ul><li>操作系统: Windows11</li><li>NodeJs: v18.17.1 (LTS)</li><li>Git: 2.39.1.windows.1</li><li>Hexo: v7.0.0</li><li>VSCode: v1.81.0</li><li>GitHub 帐号</li><li>一个域名（强烈推荐买个域名）</li><li>云服务器（可选）</li></ul><h2 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h2><h3 id="NodeJS安装"><a href="#NodeJS安装" class="headerlink" title="NodeJS安装"></a>NodeJS安装</h3><ol><li><p>打开Node官网，下载和自己系统相配的Node的安装程序，否则会出现安装问题。下载地址：<a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a><br> 我个人的版本是 18.17.1，目前LTS版本已经更新到20.10.0，不同版本的NodeJS和不同版本的Hexo有兼容性问题。下图展示的是本本限制，这里也给到历史本本的下载地址<a href="https://nodejs.org/en/download/releases/">https://nodejs.org/en/download/releases/</a>。</p><p><img src="https://assets.leoder.top/posts/HexoBaseTutorial1/nodelimit.png" alt="nodejs版本限制"></p></li><li><p>下载后安装，安装的目录可以使用默认目录【C:/Program Files/nodejs/】，也可以自定义路径。<br> 这个环境路径切换坑也很多，如果大家C盘空间足够可以直接装C盘，如果想切换其他盘或者把环境遍历切换到自定义路径也可以，具体教程百度(不过坑比较多就是了)!</p></li><li><p>安装完成后，检查是否安装成功。在键盘按下win + R键，输入CMD，然后回车，打开CMD窗口，执行node -v命令，看到版本信息，则说明安装成功。</p></li></ol><h3 id="Git安装"><a href="#Git安装" class="headerlink" title="Git安装"></a>Git安装</h3><ol><li><p>进入官网: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>，由于官网下载太慢可以通过淘宝的开源镜像下载网址：<a href="https://registry.npmmirror.com/binary.html?path=git-for-windows/v2.39.1.windows.1/">https://registry.npmmirror.com/binary.html?path=git-for-windows/v2.39.1.windows.1/</a> ，下载版本更具自己的需求选择即可。  </p><p><img src="https://assets.leoder.top/posts/HexoBaseTutorial1/gitdownload.png" alt="Git下载图"></p></li><li><p>下载后傻瓜式安装Git即可，安装的目录可以使用默认目录【C:/Program Files/Git】，也可以自定义路径。</p></li><li><p>点击电脑开始,或者鼠标右键菜单即可看见Git Bash。</p><ul><li><code>Git CMD</code>是windows 命令行的指令风格</li><li><code>Git BashD</code>是linux系统的指令风格（建议使用）</li><li><code>Git GUI</code>是图形化界面（新手学习不建议使用）</li></ul></li><li><p>配置用户名和邮箱</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure></li></ol><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ol><li><p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li><li><p>安装完后输入hexo -v验证是否安装成功。</p></li></ol><h3 id="安装VSCode"><a href="#安装VSCode" class="headerlink" title="安装VSCode"></a>安装VSCode</h3><ol><li><p>去官网下载<a href="https://code.visualstudio.com/">Visual Studio Code</a>安装包。</p></li><li><p>下载后傻瓜式安装VSCode即可，安装的目录可以使用默认目录【C:/Program Files/Git】，也可以自定义路径。</p></li></ol><h3 id="GitHub账号与创建仓库"><a href="#GitHub账号与创建仓库" class="headerlink" title="GitHub账号与创建仓库"></a>GitHub账号与创建仓库</h3><ol><li><p>进入GitHub官网: <a href="https://github.com">https://github.com</a></p><p><img src="https://assets.leoder.top/posts/HexoBaseTutorial1/githubmain.webp" alt="GitHub"></p></li><li><p>点击右上角的 Sign up(注册)</p><p><img src="https://assets.leoder.top/posts/HexoBaseTutorial1/githubsignup.png" alt="GitHub注册"></p></li><li><p>填写自己的邮箱、密码、用户名等信息，然后用邮箱验证即可完成。</p></li><li><p>注册完成后，点击右上角的<code>+</code>按钮，选择<code>New repository</code>，创建一个<code>&lt;用户名&gt;.github.io</code>的仓库。</p><p><img src="https://assets.leoder.top/posts/HexoBaseTutorial1/githubnewrepository.webp" alt="GitHub创建仓库一"></p><p><img src="https://assets.leoder.top/posts/HexoBaseTutorial1/githubnewrepository2.webp" alt="GitHub创建仓库二"></p><ul><li>仓库的格式必须为：<code>&lt;用户名&gt;.github.io</code> (注意：前缀必须为用户名，不要等后面404了再来为什么！！！)</li><li>Description：为描述仓库（选填）</li><li>勾选 Initialize this repository with a README 初始化一个 <a href="http://readme.md/">README.md</a> 文件</li><li>点击 Creat repository 进行创建</li></ul></li></ol><h2 id="初始化Hexo项目"><a href="#初始化Hexo项目" class="headerlink" title="初始化Hexo项目"></a>初始化Hexo项目</h2><ol><li><p>在目标路径（我这里选的路径为【E:\OtherProjects\GitHubProjects\】）打开cmd命令窗口，执行<code>hexo init</code>初始化项目。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init hexo-theme-le0der</span><br></pre></td></tr></table></figure><p>这一步执行完成之后会在【E:\OtherProjects\GitHubProjects\】文件夹下生成一个名称为【hexo-theme-le0der】的文件夹，【hexo-theme-le0der】这个是你博客文件夹的名字，你可以随便取名，这就是博客的根目录了。</p></li><li><p>进入<code>blog-demo</code> ，输入<code>npm i</code>安装相关依赖。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd blog-demo</span><br><span class="line">npm i</span><br></pre></td></tr></table></figure></li><li><p>初始化项目后，<code>blog-demo</code>有如下结构：</p><p>【node_modules】：依赖包<br>【scaffolds】：生成文章的一些模板<br>【source】：用来存放你的文章<br>【themes】：主题<br>【.npmignore】：发布时忽略的文件（可忽略）<br>【_config.landscape.yml】：主题的配置文件<br>【config.yml】：博客的配置文件<br>【package.json】：项目名称、描述、版本、运行和开发等信息</p></li><li><p>输入hexo server或者hexo s 启动项目</p><p><img src="https://assets.leoder.top/posts/HexoBaseTutorial1/HexoStart.webp" alt="Hexo启动"></p><div class="note info flat"><p>上图展示的是我使用vscode执行的指令，hexo使用的是局部安装所以比上文指令多了<code>npx</code>，按照上述教程安装的就按章上述指令就可以了</p></div></li><li><p>打开浏览器，输入地址：<a href="http://localhost:4000/">http://localhost:4000/</a> ，看到下面的效果，说明你的博客已经构建成功了。</p><p><img src="https://assets.leoder.top/posts/HexoBaseTutorial1/HexoIndex.webp" alt="Hexo默认首页"></p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> -学习搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -Hexo教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>博客指令</title>
+      <link href="/posts/2013454d.html"/>
+      <url>/posts/2013454d.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-Markdown语法自带格式"><a href="#1-Markdown语法自带格式" class="headerlink" title="1.Markdown语法自带格式"></a>1.Markdown语法自带格式</h1><div class="note info flat"><p>参考：<a href="https://blog.csdn.net/u014061630/article/details/81359144">Markdown语法图文全面详解(10分钟学会)</a></p></div><div class="note warning flat"><p>注意：此页面偶尔会存在CSS冲突问题!</p></div><iframe src="/samples/unity/index.html" allowfullscreen="true" name="ThreeJSFrame" title="ThreeJSFrame" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; border: none;"></iframe>]]></content>
       
       
       <categories>
@@ -18,14 +43,20 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
     </entry>
     
     
     
     <entry>
       <title>Hello World</title>
-      <link href="/2023/10/20/hello-world/"/>
-      <url>/2023/10/20/hello-world/</url>
+      <link href="/posts/4a17b156.html"/>
+      <url>/posts/4a17b156.html</url>
       
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
       
@@ -43,8 +74,8 @@
     
     <entry>
       <title>视频测试</title>
-      <link href="/2022/08/09/Bilibili%E8%A7%86%E9%A2%91%E9%80%82%E9%85%8D%E6%B5%8B%E8%AF%95/"/>
-      <url>/2022/08/09/Bilibili%E8%A7%86%E9%A2%91%E9%80%82%E9%85%8D%E6%B5%8B%E8%AF%95/</url>
+      <link href="/posts/2013454d.html"/>
+      <url>/posts/2013454d.html</url>
       
         <content type="html"><![CDATA[<h1 id="1-Markdown语法自带格式"><a href="#1-Markdown语法自带格式" class="headerlink" title="1.Markdown语法自带格式"></a>1.Markdown语法自带格式</h1><div class="note info flat"><p>参考：<a href="https://blog.csdn.net/u014061630/article/details/81359144">Markdown语法图文全面详解(10分钟学会)</a></p></div><div class="note warning flat"><p>注意：此页面偶尔会存在CSS冲突问题!</p></div><div align=center class="aspect-ratio">    <iframe src="https://player.bilibili.com/player.html?aid=474023258&&page=1&as_wide=1&high_quality=1&danmaku=0"     scrolling="no"     border="0"     frameborder="no"     framespacing="0"     high_quality=1    danmaku=1     allowfullscreen="true">     </iframe></div>]]></content>
       
@@ -52,25 +83,6 @@
       <categories>
           
           <category> 环境配置 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Markdown语法与外挂标签写法汇总</title>
-      <link href="/2022/08/09/hello-world2/"/>
-      <url>/2022/08/09/hello-world2/</url>
-      
-        <content type="html"><![CDATA[<h1 id="1-Markdown语法自带格式"><a href="#1-Markdown语法自带格式" class="headerlink" title="1.Markdown语法自带格式"></a>1.Markdown语法自带格式</h1><div class="note info flat"><p>参考：<a href="https://blog.csdn.net/u014061630/article/details/81359144">Markdown语法图文全面详解(10分钟学会)</a></p></div><div class="note warning flat"><p>注意：此页面偶尔会存在CSS冲突问题!</p></div><iframe src="/samples/unity/index.html" allowfullscreen="true" name="ThreeJSFrame" title="ThreeJSFrame" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; border: none;"></iframe>]]></content>
-      
-      
-      <categories>
-          
-          <category> 项目展示 </category>
           
       </categories>
       
