@@ -1,0 +1,40 @@
+/* 底部标签鼠标选中效果 */
+/* ------------------------------------------------------ */
+.github-badge img:hover {
+    scale: 1.05;
+    transition: all .3s ease-in-out
+}
+
+/* 隐藏 data-title 内容 */
+[data-title] {
+    position: relative;
+    display: inline-block;
+    /* 使容器大小适应内容 */
+}
+
+[data-title]:hover::before {
+    content: attr(data-title);
+    position: absolute;
+    background: #4c4948;
+    color: #fff;
+    font-size: 12px;
+    padding: 0px 4px;
+    border-radius: 0px;
+    line-height: 20px; /* 设置为框的高度，实现垂直居中 */
+    border: 1.5px solid #fff; /* 添加白色边框 */
+    width: auto; /* 根据内容调整宽度 */
+    height: 20px; /* 根据内容调整宽度 */
+    text-align: center;
+    top: 105%; /* 调整位置 */
+    left: 100%;
+    transform: translateX(-50%);
+    white-space: nowrap; /* 防止文本换行 */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+[data-title]:hover::before {
+    opacity: 1;
+}
+
+/* ------------------------------------------------------ */
