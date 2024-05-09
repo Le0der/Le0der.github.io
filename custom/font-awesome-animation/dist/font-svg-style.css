@@ -1,0 +1,15 @@
+svg.menu_icon {
+    width: 1.8em;
+    height: 1.8em;
+    vertical-align: -0.5em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+svg.social_icon {
+    width: 1.20em;
+    height: 1.20em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}

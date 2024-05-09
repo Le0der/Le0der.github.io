@@ -1,0 +1,577 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>博客搭建基础教程(二) | LEO CODER</title><meta name="author" content="Le0der"><meta name="copyright" content="Le0der"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言 这部分教程感谢fomalhaut大佬的文章Hexo博客搭建基础教程(二)和butterfly官方文档Butterfly 安裝文檔(二) 主題頁面参考或者直接搬运他们的教程，方便收藏，不怕某天作者的博客突然挂了导致无法参考🙈🙈🙈Fomalhaut大佬在B站有搭建视频，而且博客进行了开源，可以去大力支持一波👍全程我将会和大家一起进行搭建，大家可以放心食用。 博客搭建与魔改系列教程导航🚥">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客搭建基础教程(二)">
+<meta property="og:url" content="https://blog.leoder.top/2023/12/06/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B(%E4%BA%8C)/index.html">
+<meta property="og:site_name" content="LEO CODER">
+<meta property="og:description" content="前言 这部分教程感谢fomalhaut大佬的文章Hexo博客搭建基础教程(二)和butterfly官方文档Butterfly 安裝文檔(二) 主題頁面参考或者直接搬运他们的教程，方便收藏，不怕某天作者的博客突然挂了导致无法参考🙈🙈🙈Fomalhaut大佬在B站有搭建视频，而且博客进行了开源，可以去大力支持一波👍全程我将会和大家一起进行搭建，大家可以放心食用。 博客搭建与魔改系列教程导航🚥">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://assets.leoder.top/img/avatar.png">
+<meta property="article:published_time" content="2023-12-06T05:46:05.000Z">
+<meta property="article:modified_time" content="2023-12-06T05:46:05.000Z">
+<meta property="article:author" content="Le0der">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Butterfly">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://assets.leoder.top/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.leoder.top/2023/12/06/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B(%E4%BA%8C)/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Le0der","link":"链接: ","source":"来源: LEO CODER","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '博客搭建基础教程(二)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-12-06 13:46:05'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 20
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/custom/universe/universe.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4300317_9snhy53vxj.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/custom/font-awesome-animation/dist/font-svg-style.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="/custom/postbeautify/posttitle.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="/custom/spider_man/spiderman.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="/custom/comments/emoji.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="/custom/comments/notice.css"  media="defer" onload="this.media='all'"><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><div id="myscoll"></div><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="/custom/footer_beautify/footer_beautify.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://assets.leoder.top/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-shangdian"></use></svg><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/showroom/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-yunhang"></use></svg><span> 展馆</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-wenjianjia"></use></svg><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-archives">                   </use></svg><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tag">                   </use></svg><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-categories">                   </use></svg><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-gongwenbao"></use></svg><span> 宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-music">                   </use></svg><span> 音乐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-movie">                   </use></svg><span> 电影</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/navigation/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-nav">                   </use></svg><span> 导航</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-liuyan2"></use></svg><span> 留言</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-hezuo"></use></svg><span> 友链</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-about"></use></svg><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="LEO CODER"><span class="site-name">LEO CODER</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-shangdian"></use></svg><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/showroom/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-yunhang"></use></svg><span> 展馆</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-wenjianjia"></use></svg><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-archives">                   </use></svg><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tag">                   </use></svg><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-categories">                   </use></svg><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-gongwenbao"></use></svg><span> 宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-music">                   </use></svg><span> 音乐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-movie">                   </use></svg><span> 电影</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/navigation/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-nav">                   </use></svg><span> 导航</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-liuyan2"></use></svg><span> 留言</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-hezuo"></use></svg><span> 友链</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-about"></use></svg><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">博客搭建基础教程(二)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-06T05:46:05.000Z" title="发表于 2023-12-06 13:46:05">2023-12-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-12-06T05:46:05.000Z" title="更新于 2023-12-06 13:46:05">2023-12-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/BlogLearn/">BlogLearn</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="博客搭建基础教程(二)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div class="note info no-icon flat"><p><span class='p h4'><strong>前言</strong></span></p>
+<p>这部分教程感谢fomalhaut大佬的文章<a target="_blank" rel="noopener" href="https://www.fomal.cc/posts/e593433d.html">Hexo博客搭建基础教程(二)</a>和butterfly官方文档<a target="_blank" rel="noopener" href="https://butterfly.js.org/posts/dc584b87/">Butterfly 安裝文檔(二) 主題頁面</a><br>参考或者直接搬运他们的教程，方便收藏，不怕某天作者的博客突然挂了导致无法参考🙈🙈🙈<br><a target="_blank" rel="noopener" href="https://space.bilibili.com/220757832">Fomalhaut</a>大佬在B站有搭建视频，而且博客进行了开源，可以去大力支持一波👍<br>全程我将会和大家一起进行搭建，大家可以放心食用。</p>
+<p>博客搭建与魔改系列教程导航🚥🚥🚥  </p>
+<ol>
+<li><a href="">博客搭建基础教程(一)</a></li>
+<li><a href="">博客搭建基础教程(二)</a>  ⇦当前位置🪂</li>
+</ol>
+</div>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ol>
+<li>博客搭建过程遇到任何问题，优先在本页面搜索，检查是否已经有该配置教程。</li>
+<li>无法解决问题可以阅读<a target="_blank" rel="noopener" href="https://www.fomal.cc/">Fomalhaut</a>的博客或者<a target="_blank" rel="noopener" href="https://butterfly.js.org/">官方</a>搭建教程寻求解决方案。</li>
+<li>你也可以在文章评论区留言，注意留言时请填写正确的邮箱以确保能收到站长的回复。</li>
+</ol>
+<h2 id="Vercel部署与自定义域名"><a href="#Vercel部署与自定义域名" class="headerlink" title="Vercel部署与自定义域名"></a>Vercel部署与自定义域名</h2><ol>
+<li><p>Vercel部署</p>
+<p>Vercel简介：<a target="_blank" rel="noopener" href="https://vercel.com/dashboard">vercel</a>是一个代码托管平台，它能够托管你的静态html界面，甚至能够托管你的node.js与Python服务端脚本，是<strong>不想买服务器的懒人的福音</strong>！</p>
+<p><strong>使用Vercel部署Hexo项目步骤：</strong></p>
+<p>​	&lt;1&gt; 首先需要一个Vercel账号，这里<strong>推荐用GitHub账户关联，这样你就可以在vercel中直接托管你的GitHub库中的项目了</strong>，实现开发部署一步到位（网络不流畅可以考虑挂梯子）。</p>
+<p><img src="https://assets.leoder.top/posts/HexoBaseTutorial2/Tutorial1.webp" alt="Vercel登录"></p>
+<p>​	&lt;2&gt;当你用你的Github账户关联并绑定手机号登录之后，点击右上角的<code>Add New Project</code>然后选择<code>Project</code>选项，这时候应该能看到你Github账号的仓库，选择你刚刚部署成功的存储静态博客的仓库<code>&lt;username&gt;.github.io</code>右边的<code>Import</code>选项，表示你要导入该仓库。</p>
+<p><img src="https://assets.leoder.top/posts/HexoBaseTutorial2/Tutorial1.webp" alt="Vercel创建工程"></p>
+<p>​	&lt;3&gt;起一个只能有字母、数字或者或者连字符的项目名称，然后其他默认，点击<code>Deploy</code>，等待一分钟即可部署成功，部署成功后电极<code>Continue to Dashboard</code>跳转到控制面板，下图所示就是控制面板，看到就代表成功部署到了，但是我们现在还不能访问他给出的域，因为GFW最近把Vercel屏蔽了。</p>
+<p><img src="https://assets.leoder.top/posts/HexoBaseTutorial2/Tutorial3.webp" alt="Vercel创建工程"></p>
+<p><img src="https://assets.leoder.top/posts/HexoBaseTutorial2/Tutorial4.webp" alt="Vercel创建工程"></p>
+</li>
+<li><p>绑定自定义域名</p>
+<p>现在你的个人网站的地址是 <code>username.github.io</code>以及在Vercel上有一个<code>blog-demo-chi.vercel.app</code>。如果觉得不够定制化，可以购买一个专属域名。</p>
+<div class="note info flat"><p>这一步不是必要的，如果目前还不想买域名可以先跳过。</p>
+</div>
+
+<p>腾讯云、阿里云等都是不错的域名代理商，建议选用<code>com</code>，<code>cn</code>或<code>cc</code>这类常用好记的顶域，对SEO比较友好，自定义部分的长度尽可能短别人才会更容易地记住你的网站，要知道域名就是你网站的卡片。此处以阿里云域名为例进行说明，购买域名后，实名认证进入阿里云控制台，点云解析进去，找到你刚买的域名，点进去添加Vercel所需的解析记录，注意博主这里是解析二级域名只需要解析一条即可。但是如果是一级域名，需要解析两个，一个是<code>@</code>，另外一个是<code>www</code>，Vercel建议是<code>@</code>的解析重定向至<code>www</code>。</p>
+<p>以我的域名：<code>leoder.top</code>为例进行说明</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>主机记录</strong></th>
+<th align="center"><strong>解释</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">www</td>
+<td align="center">解析后的域名为 <a target="_blank" rel="noopener" href="https://www.leoder.top/">www.leoder.top</a></td>
+</tr>
+<tr>
+<td align="center">@</td>
+<td align="center">直接解析主域名 <a target="_blank" rel="noopener" href="http://leoder.top/">leoder.top</a></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">泛解析，匹配其他所有域名 *.<a target="_blank" rel="noopener" href="https://www.leoder.top/">leoder.top</a></td>
+</tr>
+<tr>
+<td align="center">mail</td>
+<td align="center">将域名解析为 <a target="_blank" rel="noopener" href="http://mail.leoder.top/">mail.leoder.top</a>，通常用于解析邮箱服务器</td>
+</tr>
+<tr>
+<td align="center">二级</td>
+<td align="center">如 <a target="_blank" rel="noopener" href="http://abc.leoder.top/">abc.leoder.top</a>，填写 abc</td>
+</tr>
+<tr>
+<td align="center">手机网站</td>
+<td align="center">如 <a target="_blank" rel="noopener" href="http://m.leoder.top/">m.leoder.top</a>，填写 m</td>
+</tr>
+<tr>
+<td align="center">显性URL</td>
+<td align="center">不支持泛解析（泛解析：将所有子域名解析到同一地址）</td>
+</tr>
+</tbody></table>
+<div class="note info flat"><p>将域名指向云服务器，请选择「A」； 将域名指向另一个域名，请选择「CNAME」； 建立邮箱请选择「MX」，根据邮箱服务商提供的 MX 记录填写。</p>
+</div>
+
+<table>
+<thead>
+<tr>
+<th align="center">记录类型</th>
+<th align="center">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">A</td>
+<td align="center">用来指定域名的 IPv4 地址（如 8.8.8.8），如果需要将域名指向一个 IP 地址，就需要添加 A 记录。</td>
+</tr>
+<tr>
+<td align="center">CNAME</td>
+<td align="center">如果需要将域名指向另一个域名，再由另一个域名提供 IP 地址，就需要添加 CNAME 记录。</td>
+</tr>
+<tr>
+<td align="center">MX</td>
+<td align="center">如果需要设置邮箱，让邮箱能收到邮件，就需要添加 MX 记录。</td>
+</tr>
+<tr>
+<td align="center">TXT</td>
+<td align="center">在这里可以填写任何东西，长度限制 255。绝大多数的 TXT 记录是用来做 SPF 记录（反垃圾邮件）</td>
+</tr>
+<tr>
+<td align="center">NS</td>
+<td align="center">域名服务器记录，如果需要将子域名交给其他 DNS 服务商解析，就需要添加 NS 记录。</td>
+</tr>
+<tr>
+<td align="center">AAAA</td>
+<td align="center">用来指定主机名（或域名）对应的 IPv6 地址（例如：ff06:0:0:0:0:0:0:c3）记录。</td>
+</tr>
+<tr>
+<td align="center">SRV</td>
+<td align="center">记录了哪台计算机提供了哪个服务。格式为：服务的名字、点、协议的类型，例如：_xmpp-server_tcp。</td>
+</tr>
+<tr>
+<td align="center">显性URL</td>
+<td align="center">从一个地址 301 重定向到另一个地址的时候，就需要添加显性 URL 记录（注：DNSPod 目前只支持 301 重定向）。</td>
+</tr>
+<tr>
+<td align="center">隐性URL</td>
+<td align="center">类似于显性 URL，区别在于隐性 URL 不会改变地址栏的域名。</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<p><strong>添加自定义域名的步骤：</strong></p>
+<p>​	&lt;1&gt; 点击Vercel控制面板右上角的<code>Domains</code>查看当前的域，我们可以看到仅有Vercel给你预分配的一个域名，此时我们输入刚刚购买的域名，我这里以二级域名<code>demo.leoder.top</code>为例进行说明，添加后他会提示你添加一条DNS解析记录。</p>
+<p><img src="https://assets.leoder.top/posts/HexoBaseTutorial2/Tutorial5.webp" alt="Domains"></p>
+<p><img src="https://assets.leoder.top/posts/HexoBaseTutorial2/Tutorial6.webp" alt="分配域名"></p>
+<div class="note info flat"><p>如果你是新买的域名，直接输入你新买的一级域名即可，例如<code>demo123.com</code>，他会推荐你将<code>demo123.com</code>重定向至<code>www.demo123.com</code>，点<code>ADD</code>即可，然后他会提示你添加两条解析记录，一个是<code>@</code>开头的和<code>CNAME</code>开头的，添加记录的方法和二级域名一致。	</p>
+</div>
+
+<p>​	&lt;2&gt; 如果不知道怎么在购买域名的服务商网站处理域名解析，可以百度查找怎么配置为Vercel提示的DNS解析记录，这里就不再赘述。</p>
+<p>​	&lt;3&gt; 回到Vercel刚刚查看域名的地方，手动点击Refresh或者Vercel会自动刷新，如果操作没问题，应该会显示域名配置成功的提示，此时就可以通过自定义域名来访问我们搭建的网站了。</p>
+<p>​	&lt;4&gt; 当你有了新的域名之后，需要<code>[BlogRoot]\_config.yml</code>文件中的<code>url</code>配置项为自己的新域名，这样博客的文章链接才会正确生成。</p>
+<h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><p>本教程用的 🦋 hexo-theme-butterfly 主题 v4.12.0最新版，支持Hexo 5.0.0及以上版本，请放心食用。</p>
+<p>本教程用的是git的方式从GitHub安装的 <code>hexo-theme-butterfly</code>，后续魔改时更改的文件都是<code>[BlogRoot]/themes/butterfly</code>文件夹中的文件。</p>
+<p>在你的博客根目录里<code>[BlogRoot]</code>目录里，打开<code>it BASH</code>工具，执行命令即可。也可以在<code>VSCode</code>中执行git命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b master https://gitee.com/immyw/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+
+<p>安装成功后可在<code>[BlogRoot]/themes</code>文件夹下找到<code>butterfly</code>文件夹。</p>
+<div class="note info flat"><p>升级方法：在主题目录下，运行git pull</p>
+</div>
+
+<h2 id="应用主题"><a href="#应用主题" class="headerlink" title="应用主题"></a>应用主题</h2><ol>
+<li><p>修改站点配置文件<code>_config.yml</code>，把主题改为<code>butterfly</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果你没有<code>pug</code>以及<code>stylus</code>的渲染器，请下载安装，这两个渲染器是<code>Butterfly</code>生成基础页面所需的依赖包：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为了减少升级主题后带来的不便，请使用以下方法（建议，可以不做，高度魔改的一般都不会升级主题了，不然魔改的会被覆盖掉）</p>
+<p>把主题文件夹中的 <code>[BlogRoot]/_config.yml</code> 复制到 Hexo 根目录里，同时重新命名为 <code>_config.butterfly.yml</code>。以后只需要在 <code>_config.butterfly.yml</code>进行配置即可生效。Hexo会自动合併主题中的<code>_config.yml</code>和 <code>_config.butterfly.yml</code>里的配置，如果存在同名配置，会使用<code>_config.butterfly.yml</code>的配置，其优先度较高。</p>
+</li>
+</ol>
+<h2 id="基础用法说明"><a href="#基础用法说明" class="headerlink" title="基础用法说明"></a>基础用法说明</h2><p><code>Front-matter</code> 是 markdown 文件最上方以<code>---</code>分隔的区域，用于指定个别档案的变数。</p>
+<ul>
+<li>Page Front-matter 用于页面配置</li>
+<li>Post Front-matter 用于文章页配置</li>
+</ul>
+<div class="note info flat"><p>如果标注可选的参数，可根据自己需要添加，不用全部都写</p>
+</div>
+
+<p><strong>Page Front-matter：</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title:</span><br><span class="line">date:</span><br><span class="line">updated:</span><br><span class="line">type:</span><br><span class="line">comments:</span><br><span class="line">description:</span><br><span class="line">keywords:</span><br><span class="line">top<span class="emphasis">_img:</span></span><br><span class="line"><span class="emphasis">mathjax:</span></span><br><span class="line"><span class="emphasis">katex:</span></span><br><span class="line"><span class="emphasis">aside:</span></span><br><span class="line"><span class="emphasis">aplayer:</span></span><br><span class="line"><span class="emphasis">highlight_</span>shrink:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">写法</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">title</td>
+<td>【必需】页面标题</td>
+</tr>
+<tr>
+<td align="left">date</td>
+<td>【必需】页面创建日期</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td>【必需】标籤、分类和友情链接三个页面需要配置</td>
+</tr>
+<tr>
+<td align="left">updated</td>
+<td>【可选】页面更新日期</td>
+</tr>
+<tr>
+<td align="left">description</td>
+<td>【可选】页面描述</td>
+</tr>
+<tr>
+<td align="left">keywords</td>
+<td>【可选】页面关键字</td>
+</tr>
+<tr>
+<td align="left">comments</td>
+<td>【可选】显示页面评论模块(默认 true)</td>
+</tr>
+<tr>
+<td align="left">top_img</td>
+<td>【可选】页面顶部图片</td>
+</tr>
+<tr>
+<td align="left">mathjax</td>
+<td>【可选】显示mathjax(当设置mathjax的per_page: false时，才需要配置，默认 false)</td>
+</tr>
+<tr>
+<td align="left">kates</td>
+<td>【可选】显示katex(当设置katex的per_page: false时，才需要配置，默认 false)</td>
+</tr>
+<tr>
+<td align="left">aside</td>
+<td>【可选】显示侧边栏 (默认 true)</td>
+</tr>
+<tr>
+<td align="left">aplayer</td>
+<td>【可选】在需要的页面加载aplayer的js和css,请参考文章下面的音乐 配置</td>
+</tr>
+<tr>
+<td align="left">highlight_shrink</td>
+<td>【可选】配置代码框是否展开(true&#x2F;false)(默认为设置中highlight_shrink的配置)</td>
+</tr>
+</tbody></table>
+<p><strong>Post Front-matter：</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title:</span><br><span class="line">date:</span><br><span class="line">updated:</span><br><span class="line">tags:</span><br><span class="line">categories:</span><br><span class="line">keywords:</span><br><span class="line">description:</span><br><span class="line">top<span class="emphasis">_img:</span></span><br><span class="line"><span class="emphasis">comments:</span></span><br><span class="line"><span class="emphasis">cover:</span></span><br><span class="line"><span class="emphasis">toc:</span></span><br><span class="line"><span class="emphasis">toc_</span>number:</span><br><span class="line">toc<span class="emphasis">_style_</span>simple:</span><br><span class="line">copyright:</span><br><span class="line">copyright<span class="emphasis">_author:</span></span><br><span class="line"><span class="emphasis">copyright_</span>author<span class="emphasis">_href:</span></span><br><span class="line"><span class="emphasis">copyright_</span>url:</span><br><span class="line">copyright<span class="emphasis">_info:</span></span><br><span class="line"><span class="emphasis">mathjax:</span></span><br><span class="line"><span class="emphasis">katex:</span></span><br><span class="line"><span class="emphasis">aplayer:</span></span><br><span class="line"><span class="emphasis">highlight_</span>shrink:</span><br><span class="line"><span class="section">aside:</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>写法</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>【必需】文章标题</td>
+</tr>
+<tr>
+<td>date</td>
+<td>【必需】文章创建日期</td>
+</tr>
+<tr>
+<td>updated</td>
+<td>【可选】文章更新日期</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>【可选】文章标籤</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>【可选】文章分类</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>【可选】文章关键字</td>
+</tr>
+<tr>
+<td>description</td>
+<td>【可选】文章描述</td>
+</tr>
+<tr>
+<td>top_img</td>
+<td>【可选】文章顶部图片</td>
+</tr>
+<tr>
+<td>cover</td>
+<td>【可选】文章缩略图(如果没有设置top_img,文章页顶部将显示缩略图，可设为false&#x2F;图片地址&#x2F;留空)</td>
+</tr>
+<tr>
+<td>comments</td>
+<td>【可选】显示文章评论模块(默认 true)</td>
+</tr>
+<tr>
+<td>toc</td>
+<td>【可选】显示文章TOC(默认为设置中toc的enable配置)</td>
+</tr>
+<tr>
+<td>toc_number</td>
+<td>【可选】显示toc_number(默认为设置中toc的number配置)</td>
+</tr>
+<tr>
+<td>toc_style_simple</td>
+<td>【可选】显示 toc 简洁模式</td>
+</tr>
+<tr>
+<td>copyright</td>
+<td>【可选】显示文章版权模块(默认为设置中post_copyright的enable配置)</td>
+</tr>
+<tr>
+<td>copyright_author</td>
+<td>【可选】文章版权模块的文章作者</td>
+</tr>
+<tr>
+<td>copyright_author_href</td>
+<td>【可选】文章版权模块的文章作者链接</td>
+</tr>
+<tr>
+<td>copyright_url</td>
+<td>【可选】文章版权模块的文章连结链接</td>
+</tr>
+<tr>
+<td>copyright_info</td>
+<td>【可选】文章版权模块的版权声明文字</td>
+</tr>
+<tr>
+<td>mathjax</td>
+<td>【可选】显示mathjax(当设置mathjax的per_page: false时，才需要配置，默认 false)</td>
+</tr>
+<tr>
+<td>katex</td>
+<td>【可选】显示katex(当设置katex的per_page: false时，才需要配置，默认 false)</td>
+</tr>
+<tr>
+<td>aplayer</td>
+<td>【可选】在需要的页面加载aplayer的js和css,请参考文章下面的音乐 配置</td>
+</tr>
+<tr>
+<td>highlight_shrink</td>
+<td>【可选】配置代码框是否展开(true&#x2F;false)(默认为设置中highlight_shrink的配置)</td>
+</tr>
+<tr>
+<td>aside</td>
+<td>【可选】显示侧边栏 (默认 true)</td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.leoder.top">Le0der</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.leoder.top/2023/12/06/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B(%E4%BA%8C)/">https://blog.leoder.top/2023/12/06/博客搭建基础教程(二)/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.leoder.top" target="_blank">LEO CODER</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a><a class="post-meta__tags" href="/tags/Butterfly/">Butterfly</a></div><div class="post_share"><div class="social-share" data-image="https://assets.leoder.top/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://assets.leoder.top/img/wechat.webp" target="_blank"><img class="post-qr-code-img" src="https://assets.leoder.top/img/wechat.webp" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://assets.leoder.top/img/alipay.webp" target="_blank"><img class="post-qr-code-img" src="https://assets.leoder.top/img/alipay.webp" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/12/01/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B(%E4%B8%80)/" title="博客搭建基础教程(一)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-01</div><div class="title">博客搭建基础教程(一)</div></div></a></div><div><a href="/2023/12/08/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B(%E4%B8%89)/" title="博客搭建基础教程(三)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-08</div><div class="title">博客搭建基础教程(三)</div></div></a></div><div><a href="/2024/01/05/%E5%8D%9A%E5%AE%A2%E9%AD%94%E6%94%B9%E6%95%99%E7%A8%8B%E6%80%BB%E7%BB%93(%E4%BA%8C)/" title="博客魔改教程总结(二)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-05</div><div class="title">博客魔改教程总结(二)</div></div></a></div><div><a href="/2024/01/01/%E5%8D%9A%E5%AE%A2%E9%AD%94%E6%94%B9%E6%95%99%E7%A8%8B%E6%80%BB%E7%BB%93(%E4%B8%80)%20/" title="博客魔改教程总结(一)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-01</div><div class="title">博客魔改教程总结(一)</div></div></a></div><div><a href="/2024/02/21/%E5%8D%9A%E5%AE%A2%E9%AD%94%E6%94%B9%E6%95%99%E7%A8%8B%E6%80%BB%E7%BB%93(%E4%B8%89)/" title="博客魔改教程总结(三)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-21</div><div class="title">博客魔改教程总结(三)</div></div></a></div><div><a href="/2024/04/21/%E5%8D%9A%E5%AE%A2%E9%AD%94%E6%94%B9%E6%95%99%E7%A8%8B%E6%80%BB%E7%BB%93(%E5%9B%9B)/" title="博客魔改教程总结(四)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-21</div><div class="title">博客魔改教程总结(四)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vercel%E9%83%A8%E7%BD%B2%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D"><span class="toc-number">2.</span> <span class="toc-text">Vercel部署与自定义域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">安装主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E4%B8%BB%E9%A2%98"><span class="toc-number">4.</span> <span class="toc-text">应用主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E8%AF%B4%E6%98%8E"><span class="toc-number">5.</span> <span class="toc-text">基础用法说明</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By Le0der</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="share" type="button" title="分享链接" onclick="share()"><i class="fas fa-share-nodes"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer src="https://cdn1.tianli0.top/npm/vue@2.6.14/dist/vue.min.js"></script><script defer src="https://cdn1.tianli0.top/npm/element-ui@2.15.6/lib/index.js"></script><script defer src="/js/notification.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script><script defer src="/custom/spider_man/spiderman.js"></script><script defer src="//at.alicdn.com/t/c/font_4300317_9snhy53vxj.js"></script><canvas id="universe"></canvas><script defer src="/custom/universe/universe.js"></script><script defer src="/custom/comments/emoji.js"></script><script defer src="/js/share.js"></script><script defer src="https://cdn1.tianli0.top/npm/sweetalert2@8.19.0/dist/sweetalert2.all.js"></script><script defer src="/custom/public-memorial-day/day.js"></script><script defer src="/custom/public-memorial-day/lunar.js"></script><script async src="/js/sun_moon.js"></script><script async data-pjax src="/js/txmap.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://blog.leoder.top/categories/Experience"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 Leoの经验杂谈 (0)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://blog.leoder.top/categories/BlogLearn"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🍉 Leoの博客教程 (7)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item" style="visibility: hidden"></div><a class="magnet_link_more"  href="https://blog.leoder.top/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(33.333333333333336% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #69e8f2}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v6.2.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.12.0" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" data-title="本站托管于Vercel" title=""><img src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/custom/footer_beautify/footer_beautify.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script async src="//at.alicdn.com/t/c/font_4300317_9snhy53vxj.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '50');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__bounceInRight');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '50');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --></body></html>
